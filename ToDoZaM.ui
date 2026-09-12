@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainMenu</class>
+ <widget class="QMainWindow" name="MainMenu">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>1360</width><height>860</height></rect>
+  </property>
+  <property name="minimumSize"><size><width>1050</width><height>680</height></size></property>
+  <property name="windowTitle"><string>ToDoZaM</string></property>
+  <property name="styleSheet">
+   <string notr="true">/* ===== ToDoZaM light / modern theme ===== */
+QMainWindow, QWidget#centralwidget { background: #F4F7F8; color: #25343A; font-family: "Segoe UI", Arial, sans-serif; }
+
+QFrame#sidebar { background: #24343A; border: 0; }
+QLabel#lblBrand { color: #FFFFFF; font-size: 28px; font-weight: 900; background: transparent; }
+QLabel#lblBrandSub { color: #AFC2C7; font-size: 11px; font-weight: 600; background: transparent; }
+QLabel#lblSidebarSection { color: #7F989F; font-size: 10px; font-weight: 800; letter-spacing: 1px; background: transparent; }
+QLabel#lblSidebarFooter { color: #82989E; font-size: 10px; background: transparent; }
+
+QPushButton[class="navButton"] {
+    background: transparent; color: #CFDADD; border: 0; border-radius: 12px;
+    text-align: left; padding: 12px 16px; min-height: 24px; font-size: 13px; font-weight: 650;
+}
+QPushButton[class="navButton"]:hover { background: #30464D; color: #FFFFFF; }
+QPushButton[class="navButton"][active="true"] { background: #DDEBE8; color: #204039; font-weight: 850; }
+
+QFrame#topHeader { background: #F4F7F8; border: 0; }
+QLabel#lblHeaderTitle { color: #23333A; font-size: 27px; font-weight: 850; background: transparent; }
+QLabel#lblHeaderSubtitle { color: #667981; font-size: 12px; background: transparent; }
+QLabel#lblToday { color: #63767E; font-size: 12px; font-weight: 650; background: transparent; }
+
+QStackedWidget#stackedWidget { background: #F4F7F8; border: 0; }
+QScrollArea { background: transparent; border: 0; }
+QScrollArea > QWidget > QWidget { background: transparent; }
+
+QFrame.card { background: #FFFFFF; border: 1px solid #D8E2E5; border-radius: 18px; }
+QFrame.sectionCard { background: #FFFFFF; border: 1px solid #D8E2E5; border-radius: 16px; }
+QFrame.accentSage { background: #6F9488; border: 0; border-radius: 3px; min-height: 6px; max-height: 6px; }
+QFrame.accentBlue { background: #6E86B7; border: 0; border-radius: 3px; min-height: 6px; max-height: 6px; }
+QFrame.accentRose { background: #B97878; border: 0; border-radius: 3px; min-height: 6px; max-height: 6px; }
+
+QLabel.pageTitle { color: #25343A; font-size: 23px; font-weight: 850; background: transparent; }
+QLabel.pageText { color: #61747C; font-size: 12px; background: transparent; }
+QLabel.sectionTitle { color: #2D4148; font-size: 15px; font-weight: 800; background: transparent; }
+QLabel.fieldLabel { color: #455A62; font-size: 11px; font-weight: 700; background: transparent; }
+QLabel.helperText { color: #7B8D94; font-size: 10px; background: transparent; }
+QLabel.systemValue { color: #35515B; font-size: 12px; font-weight: 750; background: #F5F9F8; border: 1px solid #D8E6E2; border-radius: 9px; padding: 8px 10px; }
+
+QLineEdit, QTextEdit, QComboBox, QDateEdit, QSpinBox {
+    background: #FBFCFC; color: #263A42; border: 1px solid #C9D7DB; border-radius: 9px;
+    min-height: 35px; padding: 0 10px; font-size: 12px; selection-background-color: #CFE1DC;
+}
+QTextEdit { padding: 8px 10px; }
+QLineEdit:focus, QTextEdit:focus, QComboBox:focus, QDateEdit:focus, QSpinBox:focus { border: 2px solid #6F9488; background: #FFFFFF; }
+QComboBox::drop-down, QDateEdit::drop-down { width: 26px; border: 0; }
+QCheckBox { color: #536971; spacing: 7px; font-size: 11px; }
+QCheckBox::indicator { width: 16px; height: 16px; }
+
+QPushButton#btnSubmitTodo { background: #587F73; color: #FFFFFF; border: 0; border-radius: 11px; padding: 10px 22px; min-height: 24px; font-size: 13px; font-weight: 850; }
+QPushButton#btnSubmitTodo:hover { background: #4C7166; }
+QPushButton#btnSubmitTodo:pressed { background: #3E5F56; }
+QPushButton#btnClearTodo { background: #EDF2F3; color: #40555D; border: 1px solid #D1DDE0; border-radius: 11px; padding: 10px 20px; min-height: 24px; font-size: 13px; font-weight: 750; }
+QPushButton#btnClearTodo:hover { background: #E2E9EB; }
+
+QFrame.placeholderCard { background: #FFFFFF; border: 1px solid #D8E2E5; border-radius: 18px; }
+QLabel.placeholderIcon { color: #6F9488; font-size: 42px; font-weight: 900; background: transparent; }
+QLabel.placeholderTitle { color: #263A42; font-size: 22px; font-weight: 850; background: transparent; }
+QLabel.placeholderText { color: #667B83; font-size: 12px; background: transparent; }
+
+QTableWidget { background: #FFFFFF; alternate-background-color: #F7F9FA; border: 1px solid #D8E2E5; border-radius: 12px; gridline-color: #E7ECEE; selection-background-color: #DDEBE8; selection-color: #23343A; }
+QHeaderView::section { background: #E7EFED; color: #344950; border: 0; border-right: 1px solid #D6E1DF; padding: 8px; font-weight: 750; }
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="rootLayout">
+    <property name="spacing"><number>0</number></property>
+    <property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property>
+    <item>
+     <widget class="QFrame" name="sidebar">
+      <property name="minimumSize"><size><width>245</width><height>0</height></size></property>
+      <property name="maximumSize"><size><width>245</width><height>16777215</height></size></property>
+      <layout class="QVBoxLayout" name="sidebarLayout">
+       <property name="spacing"><number>8</number></property>
+       <property name="leftMargin"><number>18</number></property><property name="topMargin"><number>28</number></property><property name="rightMargin"><number>18</number></property><property name="bottomMargin"><number>22</number></property>
+       <item><widget class="QLabel" name="lblBrand"><property name="text"><string>ToDoZaM</string></property></widget></item>
+       <item><widget class="QLabel" name="lblBrandSub"><property name="text"><string>Personal productivity cockpit</string></property></widget></item>
+       <item><spacer name="spacerBrand"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>22</height></size></property></spacer></item>
+       <item><widget class="QLabel" name="lblSidebarSection"><property name="text"><string>WORKSPACE</string></property></widget></item>
+       <item><widget class="QPushButton" name="btnAddTodo"><property name="text"><string>＋   Add a ToDo</string></property><property name="styleSheet"><string></string></property></widget></item>
+       <item><widget class="QPushButton" name="btnTodoList"><property name="text"><string>☷   List of ToDos</string></property></widget></item>
+       <item><widget class="QPushButton" name="btnStats"><property name="text"><string>◫   Stats</string></property></widget></item>
+       <item><widget class="QPushButton" name="btnLists"><property name="text"><string>≡   Lists</string></property></widget></item>
+       <item><spacer name="spacerMenu"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item>
+       <item><widget class="QLabel" name="lblSidebarSection2"><property name="text"><string>APPLICATION</string></property><property name="styleSheet"><string>color:#7F989F;font-size:10px;font-weight:800;</string></property></widget></item>
+       <item><widget class="QPushButton" name="btnSettings"><property name="text"><string>⚙   Settings</string></property></widget></item>
+       <item><spacer name="spacerSidebarBottom"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>60</height></size></property></spacer></item>
+       <item><widget class="QLabel" name="lblSidebarFooter"><property name="text"><string>Local • Private • SQLite</string></property></widget></item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="contentWidget">
+      <layout class="QVBoxLayout" name="contentLayout">
+       <property name="spacing"><number>4</number></property>
+       <property name="leftMargin"><number>28</number></property><property name="topMargin"><number>18</number></property><property name="rightMargin"><number>28</number></property><property name="bottomMargin"><number>22</number></property>
+       <item>
+        <widget class="QFrame" name="topHeader">
+         <layout class="QHBoxLayout" name="headerLayout">
+          <property name="leftMargin"><number>4</number></property><property name="topMargin"><number>4</number></property><property name="rightMargin"><number>4</number></property><property name="bottomMargin"><number>10</number></property>
+          <item><layout class="QVBoxLayout" name="headerTextLayout"><property name="spacing"><number>2</number></property>
+            <item><widget class="QLabel" name="lblHeaderTitle"><property name="text"><string>Add a ToDo</string></property></widget></item>
+            <item><widget class="QLabel" name="lblHeaderSubtitle"><property name="text"><string>Capture it now. Organize it clearly. Finish it with less noise.</string></property></widget></item>
+          </layout></item>
+          <item><spacer name="headerSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
+          <item><widget class="QLabel" name="lblToday"><property name="text"><string>Today</string></property><property name="alignment"><set>Qt::AlignRight|Qt::AlignVCenter</set></property></widget></item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QStackedWidget" name="stackedWidget">
+         <property name="currentIndex"><number>0</number></property>
+
+         <!-- ==================== ADD TODO PAGE ==================== -->
+         <widget class="QWidget" name="pageAddTodo">
+          <layout class="QVBoxLayout" name="pageAddTodoLayout"><property name="leftMargin"><number>0</number></property><property name="topMargin"><number>0</number></property><property name="rightMargin"><number>0</number></property><property name="bottomMargin"><number>0</number></property>
+           <item><widget class="QScrollArea" name="scrollAddTodo"><property name="widgetResizable"><bool>true</bool></property><widget class="QWidget" name="scrollAddTodoContents"><property name="geometry"><rect><x>0</x><y>0</y><width>1030</width><height>1040</height></rect></property>
+            <layout class="QVBoxLayout" name="addTodoScrollLayout"><property name="spacing"><number>16</number></property><property name="leftMargin"><number>4</number></property><property name="topMargin"><number>4</number></property><property name="rightMargin"><number>12</number></property><property name="bottomMargin"><number>24</number></property>
+
+             <item><widget class="QFrame" name="introCard"><property name="minimumSize"><size><width>0</width><height>90</height></size></property><property name="styleSheet"><string>QFrame#introCard{background:#E8F1EF;border:1px solid #CDDFDA;border-radius:16px;} QLabel{background:transparent;}</string></property>
+              <layout class="QHBoxLayout" name="introLayout"><property name="leftMargin"><number>22</number></property><property name="rightMargin"><number>22</number></property>
+               <item><layout class="QVBoxLayout" name="introTextLayout"><item><widget class="QLabel" name="lblAddTitle"><property name="text"><string>Create a new ToDo</string></property><property name="styleSheet"><string>font-size:19px;font-weight:850;color:#29453E;</string></property></widget></item><item><widget class="QLabel" name="lblAddText"><property name="text"><string>Only Task is mandatory. Everything else can be added when it helps you plan or analyze the work.</string></property><property name="styleSheet"><string>font-size:11px;color:#587069;</string></property></widget></item></layout></item>
+               <item><widget class="QLabel" name="lblAddBadge"><property name="text"><string>NEW</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="minimumSize"><size><width>64</width><height>34</height></size></property><property name="maximumSize"><size><width>64</width><height>34</height></size></property><property name="styleSheet"><string>background:#587F73;color:white;border-radius:17px;font-weight:900;font-size:10px;</string></property></widget></item>
+              </layout>
+             </widget></item>
+
+             <item><layout class="QHBoxLayout" name="formTopLayout"><property name="spacing"><number>16</number></property>
+
+              <item><widget class="QFrame" name="cardTask"><property name="minimumSize"><size><width>0</width><height>325</height></size></property><property name="styleSheet"><string>QFrame#cardTask{background:#FFFFFF;border:1px solid #D8E2E5;border-radius:16px;}</string></property><layout class="QVBoxLayout" name="taskCardLayout"><property name="spacing"><number>9</number></property><property name="leftMargin"><number>20</number></property><property name="topMargin"><number>18</number></property><property name="rightMargin"><number>20</number></property><property name="bottomMargin"><number>18</number></property>
+                <item><widget class="QFrame" name="taskAccent"><property name="styleSheet"><string>background:#6F9488;border:0;border-radius:3px;max-height:6px;min-height:6px;</string></property></widget></item>
+                <item><widget class="QLabel" name="lblTaskSection"><property name="text"><string>Task</string></property><property name="styleSheet"><string>font-size:15px;font-weight:800;color:#2D4148;</string></property></widget></item>
+                <item><widget class="QLabel" name="lblTask"><property name="text"><string>Task *</string></property><property name="styleSheet"><string>font-weight:700;color:#455A62;</string></property></widget></item>
+                <item><widget class="QLineEdit" name="editTask"><property name="placeholderText"><string>e.g. Prepare September Power BI report</string></property></widget></item>
+                <item><widget class="QLabel" name="lblDescription"><property name="text"><string>Description</string></property><property name="styleSheet"><string>font-weight:700;color:#455A62;</string></property></widget></item>
+                <item><widget class="QTextEdit" name="txtDescription"><property name="minimumSize"><size><width>0</width><height>105</height></size></property><property name="placeholderText"><string>Add context, steps or expected outcome…</string></property></widget></item>
+               </layout></widget></item>
+
+              <item><widget class="QFrame" name="cardOrganization"><property name="minimumSize"><size><width>0</width><height>325</height></size></property><property name="styleSheet"><string>QFrame#cardOrganization{background:#FFFFFF;border:1px solid #D8E2E5;border-radius:16px;}</string></property><layout class="QGridLayout" name="organizationGrid"><property name="horizontalSpacing"><number>12</number></property><property name="verticalSpacing"><number>8</number></property><property name="leftMargin"><number>20</number></property><property name="topMargin"><number>18</number></property><property name="rightMargin"><number>20</number></property><property name="bottomMargin"><number>18</number></property>
+                <item row="0" column="0" colspan="2"><widget class="QFrame" name="orgAccent"><property name="styleSheet"><string>background:#6E86B7;border:0;border-radius:3px;max-height:6px;min-height:6px;</string></property></widget></item>
+                <item row="1" column="0" colspan="2"><widget class="QLabel" name="lblOrganizationSection"><property name="text"><string>Organization</string></property><property name="styleSheet"><string>font-size:15px;font-weight:800;color:#2D4148;</string></property></widget></item>
+                <item row="2" column="0"><widget class="QLabel" name="lblRequestedBy"><property name="text"><string>Requested by</string></property><property name="styleSheet"><string>font-weight:700;color:#455A62;</string></property></widget></item>
+                <item row="2" column="1"><widget class="QLabel" name="lblCategory"><property name="text"><string>Category</string></property><property name="styleSheet"><string>font-weight:700;color:#455A62;</string></property></widget></item>
+                <item row="3" column="0"><widget class="QLineEdit" name="editRequestedBy"><property name="placeholderText"><string>Myself / name</string></property></widget></item>
+                <item row="3" column="1"><widget class="QComboBox" name="comboCategory"/></item>
+                <item row="4" column="0" colspan="2"><widget class="QLabel" name="lblProject"><property name="text"><string>Project</string></property><property name="styleSheet"><string>font-weight:700;color:#455A62;</string></property></widget></item>
+                <item row="5" column="0" colspan="2"><widget class="QLineEdit" name="editProject"><property name="placeholderText"><string>e.g. ToDoZaM, Move Apartment, Monthly Reporting…</string></property></widget></item>
+                <item row="6" column="0" colspan="2"><widget class="QLabel" name="lblTagsInfo"><property name="text"><string>Tags will be added later with the proper tags / todo_tags tables.</string></property><property name="styleSheet"><string>color:#87969B;font-size:10px;font-style:italic;</string></property></widget></item>
+               </layout></widget></item>
+             </layout></item>
+
+             <item><widget class="QFrame" name="cardPlanning"><property name="styleSheet"><string>QFrame#cardPlanning{background:#FFFFFF;border:1px solid #D8E2E5;border-radius:16px;}</string></property><layout class="QGridLayout" name="planningGrid"><property name="horizontalSpacing"><number>14</number></property><property name="verticalSpacing"><number>8</number></property><property name="leftMargin"><number>20</number></property><property name="topMargin"><number>18</number></property><property name="rightMargin"><number>20</number></property><property name="bottomMargin"><number>18</number></property>
+              <item row="0" column="0" colspan="4"><widget class="QFrame" name="planningAccent"><property name="styleSheet"><string>background:#B68B55;border:0;border-radius:3px;max-height:6px;min-height:6px;</string></property></widget></item>
+              <item row="1" column="0" colspan="4"><widget class="QLabel" name="lblPlanningSection"><property name="text"><string>Planning &amp; execution</string></property><property name="styleSheet"><string>font-size:15px;font-weight:800;color:#2D4148;</string></property></widget></item>
+              <item row="2" column="0"><widget class="QLabel" name="lblPriority"><property name="text"><string>Priority</string></property><property name="styleSheet"><string>font-weight:700;color:#455A62;</string></property></widget></item>
+              <item row="2" column="1"><widget class="QLabel" name="lblStatus"><property name="text"><string>Status</string></property><property name="styleSheet"><string>font-weight:700;color:#455A62;</string></property></widget></item>
+              <item row="2" column="2"><widget class="QLabel" name="lblRecurring"><property name="text"><string>Recurring</string></property><property name="styleSheet"><string>font-weight:700;color:#455A62;</string></property></widget></item>
+              <item row="2" column="3"><widget class="QLabel" name="lblProgress"><property name="text"><string>Progress (%)</string></property><property name="styleSheet"><string>font-weight:700;color:#455A62;</string></property></widget></item>
+              <item row="3" column="0"><widget class="QComboBox" name="comboPriority"><item><property name="text"><string>Critical</string></property></item><item><property name="text"><string>High</string></property></item><item><property name="text"><string>Medium</string></property></item><item><property name="text"><string>Low</string></property></item></widget></item>
+              <item row="3" column="1"><widget class="QComboBox" name="comboStatus"><item><property name="text"><string>Inbox</string></property></item><item><property name="text"><string>Open</string></property></item><item><property name="text"><string>In Progress</string></property></item><item><property name="text"><string>Waiting</string></property></item><item><property name="text"><string>Done</string></property></item><item><property name="text"><string>Cancelled</string></property></item></widget></item>
+              <item row="3" column="2"><widget class="QComboBox" name="comboRecurring"><item><property name="text"><string>None</string></property></item><item><property name="text"><string>Daily</string></property></item><item><property name="text"><string>Weekly</string></property></item><item><property name="text"><string>Monthly</string></property></item><item><property name="text"><string>Yearly</string></property></item></widget></item>
+              <item row="3" column="3"><widget class="QSpinBox" name="spinProgress"><property name="maximum"><number>100</number></property><property name="suffix"><string> %</string></property></widget></item>
+
+              <item row="4" column="0"><widget class="QCheckBox" name="checkStartOn"><property name="text"><string>Use start date</string></property></widget></item>
+              <item row="4" column="1"><widget class="QCheckBox" name="checkDueOn"><property name="text"><string>Use due date</string></property></widget></item>
+              <item row="4" column="2"><widget class="QLabel" name="lblEstimated"><property name="text"><string>Estimated minutes</string></property><property name="styleSheet"><string>font-weight:700;color:#455A62;</string></property></widget></item>
+              <item row="4" column="3"><widget class="QLabel" name="lblActual"><property name="text"><string>Actual minutes</string></property><property name="styleSheet"><string>font-weight:700;color:#455A62;</string></property></widget></item>
+              <item row="5" column="0"><widget class="QDateEdit" name="dateStartOn"><property name="enabled"><bool>false</bool></property><property name="calendarPopup"><bool>true</bool></property><property name="displayFormat"><string>yyyy-MM-dd</string></property></widget></item>
+              <item row="5" column="1"><widget class="QDateEdit" name="dateDueOn"><property name="enabled"><bool>false</bool></property><property name="calendarPopup"><bool>true</bool></property><property name="displayFormat"><string>yyyy-MM-dd</string></property></widget></item>
+              <item row="5" column="2"><widget class="QSpinBox" name="spinEstimatedMinutes"><property name="maximum"><number>100000</number></property><property name="specialValueText"><string>Not set</string></property><property name="suffix"><string> min</string></property></widget></item>
+              <item row="5" column="3"><widget class="QSpinBox" name="spinActualMinutes"><property name="maximum"><number>100000</number></property><property name="specialValueText"><string>Not set</string></property><property name="suffix"><string> min</string></property></widget></item>
+             </layout></widget></item>
+
+             <item><layout class="QHBoxLayout" name="bottomCardsLayout"><property name="spacing"><number>16</number></property>
+              <item><widget class="QFrame" name="cardNotes"><property name="minimumSize"><size><width>0</width><height>220</height></size></property><property name="styleSheet"><string>QFrame#cardNotes{background:#FFFFFF;border:1px solid #D8E2E5;border-radius:16px;}</string></property><layout class="QVBoxLayout" name="notesLayout"><property name="leftMargin"><number>20</number></property><property name="topMargin"><number>18</number></property><property name="rightMargin"><number>20</number></property><property name="bottomMargin"><number>18</number></property><item><widget class="QLabel" name="lblComment"><property name="text"><string>Comment / notes</string></property><property name="styleSheet"><string>font-size:15px;font-weight:800;color:#2D4148;</string></property></widget></item><item><widget class="QTextEdit" name="txtComment"><property name="placeholderText"><string>Anything useful for future-you…</string></property></widget></item></layout></widget></item>
+              <item><widget class="QFrame" name="cardSystem"><property name="minimumSize"><size><width>390</width><height>220</height></size></property><property name="maximumSize"><size><width>450</width><height>16777215</height></size></property><property name="styleSheet"><string>QFrame#cardSystem{background:#FFFFFF;border:1px solid #D8E2E5;border-radius:16px;}</string></property><layout class="QVBoxLayout" name="systemLayout"><property name="spacing"><number>8</number></property><property name="leftMargin"><number>20</number></property><property name="topMargin"><number>18</number></property><property name="rightMargin"><number>20</number></property><property name="bottomMargin"><number>18</number></property>
+               <item><widget class="QLabel" name="lblSystemTitle"><property name="text"><string>System information</string></property><property name="styleSheet"><string>font-size:15px;font-weight:800;color:#2D4148;</string></property></widget></item>
+               <item><widget class="QLabel" name="lblCreatedAtLabel"><property name="text"><string>Created at</string></property><property name="styleSheet"><string>font-weight:700;color:#455A62;</string></property></widget></item>
+               <item><widget class="QLabel" name="lblCreatedAtValue"><property name="text"><string>—</string></property><property name="styleSheet"><string>color:#35515B;background:#F5F9F8;border:1px solid #D8E6E2;border-radius:9px;padding:7px 9px;font-weight:700;</string></property></widget></item>
+               <item><widget class="QLabel" name="lblDoneOnLabel"><property name="text"><string>Done on</string></property><property name="styleSheet"><string>font-weight:700;color:#455A62;</string></property></widget></item>
+               <item><widget class="QLabel" name="lblDoneOnValue"><property name="text"><string>Set automatically when status is Done</string></property><property name="wordWrap"><bool>true</bool></property><property name="styleSheet"><string>color:#6B7D84;background:#F8FAFA;border:1px solid #E1E7E9;border-radius:9px;padding:7px 9px;</string></property></widget></item>
+              </layout></widget></item>
+             </layout></item>
+
+             <item><layout class="QHBoxLayout" name="actionLayout"><item><spacer name="actionSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item><item><widget class="QPushButton" name="btnClearTodo"><property name="text"><string>Clear form</string></property><property name="minimumSize"><size><width>125</width><height>42</height></size></property></widget></item><item><widget class="QPushButton" name="btnSubmitTodo"><property name="text"><string>＋ Add ToDo</string></property><property name="minimumSize"><size><width>145</width><height>42</height></size></property></widget></item></layout></item>
+            </layout>
+           </widget></widget></item>
+          </layout>
+         </widget>
+
+         <!-- ==================== LIST PAGE ==================== -->
+         <widget class="QWidget" name="pageTodoList">
+          <layout class="QVBoxLayout" name="pageTodoListLayout"><property name="leftMargin"><number>4</number></property><property name="topMargin"><number>4</number></property><property name="rightMargin"><number>4</number></property><property name="bottomMargin"><number>4</number></property>
+           <item><widget class="QFrame" name="listCard"><property name="styleSheet"><string>QFrame#listCard{background:#FFFFFF;border:1px solid #D8E2E5;border-radius:18px;}</string></property><layout class="QVBoxLayout" name="listCardLayout"><property name="spacing"><number>12</number></property><property name="leftMargin"><number>22</number></property><property name="topMargin"><number>22</number></property><property name="rightMargin"><number>22</number></property><property name="bottomMargin"><number>22</number></property>
+            <item><widget class="QLabel" name="lblListTitle"><property name="text"><string>Your ToDos</string></property><property name="styleSheet"><string>font-size:22px;font-weight:850;color:#263A42;</string></property></widget></item>
+            <item><widget class="QLabel" name="lblListSubtitle"><property name="text"><string>The table is already connected for a simple overview. We can build the full filters, sorting, right-click actions and edit dialog next.</string></property><property name="styleSheet"><string>color:#667B83;font-size:11px;</string></property></widget></item>
+            <item><widget class="QTableWidget" name="tableTodos"><property name="alternatingRowColors"><bool>true</bool></property><property name="selectionBehavior"><enum>QAbstractItemView::SelectRows</enum></property><property name="editTriggers"><set>QAbstractItemView::NoEditTriggers</set></property></widget></item>
+           </layout></widget></item>
+          </layout>
+         </widget>
+
+         <!-- ==================== STATS PAGE ==================== -->
+         <widget class="QWidget" name="pageStats">
+          <layout class="QVBoxLayout" name="statsLayout"><property name="spacing"><number>16</number></property><property name="leftMargin"><number>4</number></property><property name="topMargin"><number>4</number></property><property name="rightMargin"><number>4</number></property><property name="bottomMargin"><number>4</number></property>
+           <item><layout class="QHBoxLayout" name="kpiLayout"><property name="spacing"><number>14</number></property>
+            <item><widget class="QFrame" name="kpiTotal"><property name="styleSheet"><string>background:#FFFFFF;border:1px solid #D8E2E5;border-radius:16px;</string></property><layout class="QVBoxLayout"><item><widget class="QLabel" name="lblKpiTotalValue"><property name="text"><string>0</string></property><property name="styleSheet"><string>font-size:28px;font-weight:900;color:#587F73;</string></property></widget></item><item><widget class="QLabel" name="lblKpiTotalText"><property name="text"><string>Total ToDos</string></property><property name="styleSheet"><string>color:#667B83;font-weight:700;</string></property></widget></item></layout></widget></item>
+            <item><widget class="QFrame" name="kpiOpen"><property name="styleSheet"><string>background:#FFFFFF;border:1px solid #D8E2E5;border-radius:16px;</string></property><layout class="QVBoxLayout"><item><widget class="QLabel" name="lblKpiOpenValue"><property name="text"><string>0</string></property><property name="styleSheet"><string>font-size:28px;font-weight:900;color:#6E86B7;</string></property></widget></item><item><widget class="QLabel"><property name="text"><string>Open</string></property><property name="styleSheet"><string>color:#667B83;font-weight:700;</string></property></widget></item></layout></widget></item>
+            <item><widget class="QFrame" name="kpiProgress"><property name="styleSheet"><string>background:#FFFFFF;border:1px solid #D8E2E5;border-radius:16px;</string></property><layout class="QVBoxLayout"><item><widget class="QLabel" name="lblKpiProgressValue"><property name="text"><string>0</string></property><property name="styleSheet"><string>font-size:28px;font-weight:900;color:#B68B55;</string></property></widget></item><item><widget class="QLabel"><property name="text"><string>In Progress</string></property><property name="styleSheet"><string>color:#667B83;font-weight:700;</string></property></widget></item></layout></widget></item>
+            <item><widget class="QFrame" name="kpiDone"><property name="styleSheet"><string>background:#FFFFFF;border:1px solid #D8E2E5;border-radius:16px;</string></property><layout class="QVBoxLayout"><item><widget class="QLabel" name="lblKpiDoneValue"><property name="text"><string>0</string></property><property name="styleSheet"><string>font-size:28px;font-weight:900;color:#4F8E69;</string></property></widget></item><item><widget class="QLabel"><property name="text"><string>Done</string></property><property name="styleSheet"><string>color:#667B83;font-weight:700;</string></property></widget></item></layout></widget></item>
+            <item><widget class="QFrame" name="kpiOverdue"><property name="styleSheet"><string>background:#FFFFFF;border:1px solid #D8E2E5;border-radius:16px;</string></property><layout class="QVBoxLayout"><item><widget class="QLabel" name="lblKpiOverdueValue"><property name="text"><string>0</string></property><property name="styleSheet"><string>font-size:28px;font-weight:900;color:#B95C5C;</string></property></widget></item><item><widget class="QLabel"><property name="text"><string>Overdue</string></property><property name="styleSheet"><string>color:#667B83;font-weight:700;</string></property></widget></item></layout></widget></item>
+           </layout></item>
+           <item><widget class="QFrame" name="statsPlaceholder"><property name="styleSheet"><string>QFrame#statsPlaceholder{background:#FFFFFF;border:1px solid #D8E2E5;border-radius:18px;}</string></property><layout class="QVBoxLayout"><item><spacer><property name="orientation"><enum>Qt::Vertical</enum></property></spacer></item><item><widget class="QLabel" name="lblStatsIcon"><property name="text"><string>▥</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>font-size:42px;color:#6E86B7;</string></property></widget></item><item><widget class="QLabel" name="lblStatsTitle"><property name="text"><string>Charts come next</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>font-size:22px;font-weight:850;color:#263A42;</string></property></widget></item><item><widget class="QLabel" name="lblStatsText"><property name="text"><string>The KPI cards above already use your database. Next we can add completion rate, cycle time, backlog trends, weekday productivity and more.</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="wordWrap"><bool>true</bool></property><property name="styleSheet"><string>color:#667B83;font-size:12px;</string></property></widget></item><item><spacer><property name="orientation"><enum>Qt::Vertical</enum></property></spacer></item></layout></widget></item>
+          </layout>
+         </widget>
+
+         <!-- ==================== LISTS PAGE ==================== -->
+         <widget class="QWidget" name="pageLists"><layout class="QVBoxLayout"><item><widget class="QFrame" name="listsPlaceholder"><property name="styleSheet"><string>QFrame#listsPlaceholder{background:#FFFFFF;border:1px solid #D8E2E5;border-radius:18px;}</string></property><layout class="QVBoxLayout"><item><spacer><property name="orientation"><enum>Qt::Vertical</enum></property></spacer></item><item><widget class="QLabel"><property name="text"><string>≡</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>font-size:46px;color:#6F9488;</string></property></widget></item><item><widget class="QLabel"><property name="text"><string>Lists</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>font-size:23px;font-weight:850;color:#263A42;</string></property></widget></item><item><widget class="QLabel"><property name="text"><string>This page is intentionally prepared but empty for now. We can use it later for categories, projects, tags, recurring rules or custom lists.</string></property><property name="wordWrap"><bool>true</bool></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="styleSheet"><string>color:#667B83;font-size:12px;</string></property></widget></item><item><spacer><property name="orientation"><enum>Qt::Vertical</enum></property></spacer></item></layout></widget></item></layout></widget>
+
+         <!-- ==================== SETTINGS PAGE ==================== -->
+         <widget class="QWidget" name="pageSettings"><layout class="QVBoxLayout"><item><widget class="QFrame" name="settingsPlaceholder"><property name="styleSheet"><string>QFrame#settingsPlaceholder{background:#FFFFFF;border:1px solid #D8E2E5;border-radius:18px;}</string></property><layout class="QVBoxLayout"><property name="leftMargin"><number>28</number></property><property name="topMargin"><number>28</number></property><property name="rightMargin"><number>28</number></property><property name="bottomMargin"><number>28</number></property><item><widget class="QLabel"><property name="text"><string>Settings</string></property><property name="styleSheet"><string>font-size:23px;font-weight:850;color:#263A42;</string></property></widget></item><item><widget class="QLabel"><property name="text"><string>Application settings will live here: defaults, backups, date format, behavior, and appearance.</string></property><property name="styleSheet"><string>color:#667B83;font-size:12px;</string></property></widget></item><item><widget class="QLabel" name="lblDatabasePath"><property name="text"><string>Database: —</string></property><property name="wordWrap"><bool>true</bool></property><property name="styleSheet"><string>background:#F5F9F8;border:1px solid #D8E6E2;border-radius:10px;padding:12px;color:#405960;font-weight:700;</string></property></widget></item><item><spacer><property name="orientation"><enum>Qt::Vertical</enum></property></spacer></item></layout></widget></item></layout></widget>
+
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
